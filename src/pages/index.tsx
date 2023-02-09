@@ -30,7 +30,7 @@ const Home = () => {
         }}
         type={selectedType}
       />
-      <List data={data} type="episode" />
+      <List data={data} type={selectedType} />
       <Pagination type={selectedType} count={Number(info?.count)} />
     </div>
   );

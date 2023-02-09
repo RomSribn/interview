@@ -44,12 +44,18 @@ const PaginatedItems: React.FC<IPaginatedItems> = ({ type, count }) => {
   return (
     <ReactPaginate
       className={styles.paginationContainer}
+      pageClassName={styles.paginationElement}
+      breakClassName={styles.paginationElement}
+      activeClassName={styles.paginationElementSelected}
+      previousClassName={styles.arrowButtons}
+      nextClassName={styles.arrowButtons}
+      disabledClassName={styles.disabled}
       breakLabel="..."
-      nextLabel="next >"
+      nextLabel=">"
       onPageChange={handlePageClick}
       pageRangeDisplayed={5}
       pageCount={pageCount}
-      previousLabel="< previous"
+      previousLabel="<"
       renderOnZeroPageCount={() => null}
     />
   );

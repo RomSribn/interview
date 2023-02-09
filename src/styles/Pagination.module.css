@@ -1,7 +1,7 @@
 .paginationContainer {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  padding: 10px 20px;
   margin: 30px auto;
   width: 35%;
   background-color: #333333;
@@ -9,16 +9,29 @@
   border-radius: 100px;
 }
 
-.paginationContainer li {
+.paginationElement,
+.arrowButtons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
   transition: backgroundColor 0.3s ease;
 }
 
-.paginationContainer li.selected {
+.paginationElementSelected {
   background-color: #5b5b5b;
 }
 
-.paginationContainer li:hover {
+.disabled {
+  color: #5b5b5b;
+  cursor: not-allowed;
+}
+
+.paginationElement:not(.disabled):hover,
+.arrowButtons:not(.disabled):hover {
   cursor: pointer;
   background-color: #5b5b5b;
   transition: background-color 0.3s ease;
