@@ -1,0 +1,17 @@
+.card {
+  display: flex;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 0 15px 1px #fff;
+}
+
+.image {
+  height: auto;
+}

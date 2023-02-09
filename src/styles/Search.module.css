@@ -1,0 +1,28 @@
+.select {
+  width: auto;
+}
+
+.search {
+  display: flex;
+  width: 40%;
+  margin: 20px auto;
+  padding: 10px 25px;
+  border-radius: 20px;
+  color: #fff;
+  background-color: #333333;
+}
+
+.searchInput {
+  width: 100%;
+}
+
+.searchInput::placeholder {
+  color: #5b5b5b;
+}
+
+.stroke {
+  height: auto;
+  width: 1px;
+  background-color: #5b5b5b;
+  margin: 0 15px;
+}

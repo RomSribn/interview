@@ -1,15 +1,15 @@
-import 'styles/globals.css';
 import type { AppProps } from 'next/app';
 import { wrapper } from 'store/store';
-import Header from 'components/Header';
+import Layout from 'components/Layout';
+import 'styles/reset.css';
+import 'styles/globals.css';
 
-function App({ Component, pageProps }: AppProps) {
+const App = ({ Component, pageProps }: AppProps) => {
   return (
-    <>
-      <Header />
+    <Layout>
       <Component {...pageProps} />
-    </>
+    </Layout>
   );
-}
+};
 
 export default wrapper.withRedux(App);

@@ -1,0 +1,25 @@
+.paginationContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  margin: 30px auto;
+  width: 35%;
+  background-color: #333333;
+  color: #fff;
+  border-radius: 100px;
+}
+
+.paginationContainer li {
+  cursor: pointer;
+  transition: backgroundColor 0.3s ease;
+}
+
+.paginationContainer li.selected {
+  background-color: #5b5b5b;
+}
+
+.paginationContainer li:hover {
+  cursor: pointer;
+  background-color: #5b5b5b;
+  transition: background-color 0.3s ease;
+}

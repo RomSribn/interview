@@ -1,4 +1,52 @@
+.banner {
+  position: relative;
+}
+
+.bannerImgWrapper {
+  position: relative;
+}
+
+.bannerImgWrapper::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 4px);
+  background-image: linear-gradient(to right, black, rgb(0 0 0 / 14%));
+  z-index: 1;
+}
+
 .bannerImg {
+  position: relative;
   width: 100%;
   height: auto;
+}
+
+.subInfo {
+  position: absolute;
+  color: #fff;
+  padding: 75px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.title {
+  font-size: 50pt;
+  font-weight: 900;
+  width: 80%;
+}
+
+.subTitle {
+  font-size: 30pt;
+  font-weight: normal;
+}
+
+.button {
+  background-color: #e900ff;
+  padding: 10px;
+  width: 150px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 100px;
+  margin-top: 20px;
 }

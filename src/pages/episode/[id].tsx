@@ -1,12 +1,10 @@
 import React from 'react';
-import { useRouter } from 'next/router';
+import SingleCard from 'components/SingleCard';
 
-const Episode = () => {
-  const router = useRouter();
-  const { id } = router.query;
-  console.log(id);
+const SingleEpisode = () => (
+  <div>
+    <SingleCard type="episode" />
+  </div>
+);
 
-  return <div>Episode</div>;
-};
-
-export default Episode;
+export default SingleEpisode;

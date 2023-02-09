@@ -5,6 +5,7 @@ interface IEpisode {
   episode: string;
   characters: string[];
   url: string;
+  image?: string;
   created: Date;
 }
 
@@ -36,7 +37,17 @@ interface ILocation {
   dimension: unknown;
   residents: string[];
   url: string;
+  image?: string;
   created: Date;
 }
 
-export type { IEpisode, ICharacter, ILocation };
+type TType = 'character' | 'location' | 'episode';
+
+type TInfo = {
+  count: number;
+  next: string | null;
+  pages: number;
+  prev: string | null;
+};
+
+export type { IEpisode, ICharacter, ILocation, TType, TInfo };

@@ -1,12 +1,10 @@
 import React from 'react';
-import { useRouter } from 'next/router';
+import SingleCard from 'components/SingleCard';
 
-const Location = () => {
-  const router = useRouter();
-  const { id } = router.query;
-  console.log(id);
+const SingleLocation = () => (
+  <div>
+    <SingleCard type="location" />
+  </div>
+);
 
-  return <div>Location</div>;
-};
-
-export default Location;
+export default SingleLocation;

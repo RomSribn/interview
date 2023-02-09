@@ -1,0 +1,16 @@
+.singleCard {
+  padding: 20px;
+}
+
+.card {
+  display: flex;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.image {
+  height: auto;
+}
