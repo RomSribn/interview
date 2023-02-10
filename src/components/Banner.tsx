@@ -10,24 +10,25 @@ const Banner: React.FC = (props) => {
   const router = useRouter();
   console.log(router);
 
-  const type = router.pathname.split('/')[1];
+  const splittedPathname = router.asPath.split('/');
   // @ts-ignore
-  const { currentElement } = useSelector((state: AppState) => state[type] || {});
-  const isHome = type === '';
-  const title = isHome ? 'The Rick and Morty Challenge' : currentElement?.name;
+  const { currentElement } = useSelector((state: AppState) => state[splittedPathname[1]] || {});
+  const isListPage = splittedPathname[1] === '' || isNaN(+splittedPathname[2]);
+  const title = isListPage ? 'The Rick and Morty Challenge' : currentElement?.name;
+  console.log(splittedPathname);
 
   return (
     <div
-      className={isHome ? styles.bannerHome : styles.banner}
+      className={isListPage ? styles.bannerHome : styles.banner}
       style={{
         backgroundImage: `url(${bannerImg.src})`,
-        height: isHome ? '60vh' : '30vh'
+        height: isListPage ? '60vh' : '30vh'
       }}>
       <div className={styles.subInfo}>
         <Link href={'/'}>
           <h1 className={styles.title}>{title}</h1>
         </Link>
-        {isHome && (
+        {isListPage && (
           <>
             <h2 className={styles.subTitle}>lorem ipsum dolor sit amet</h2>
             <button className={styles.button}>Subscribe</button>
