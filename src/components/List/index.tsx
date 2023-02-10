@@ -16,7 +16,8 @@ const List: React.FC<{ data: ICharacter[] | ILocation[] | IEpisode[]; type: TTyp
     <div className={styles.list}>
       {data.map((el) => (
         <Link key={el.id} href={getCardLink(el.id)}>
-          <Card {...el} />
+          {/* @ts-ignore */}
+          <Card {...el} searchedType={searchedType} />
         </Link>
       ))}
     </div>

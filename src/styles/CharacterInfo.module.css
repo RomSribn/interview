@@ -1,0 +1,62 @@
+.characterInfo {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 60%;
+  height: 100%;
+  padding: 20px;
+  right: 0;
+  background-image: linear-gradient(
+    to left,
+    #fff,
+    #fff,
+    #fff,
+    #fff,
+    #fff,
+    #fff,
+    rgb(255 255 255 / 80%),
+    rgb(255 255 255 / 90%),
+    rgb(255 255 255 / 0%)
+  );
+}
+
+.Dead,
+.Alive,
+.unknown {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  margin-right: 5px;
+}
+
+.Dead {
+  background-color: red;
+}
+
+.Alive {
+  background-color: rgb(0, 205, 0);
+}
+
+.unknown {
+  background-color: gray;
+}
+
+.infoSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.infoSection:first-child .title {
+  font-size: 20pt;
+}
+
+.subtitle {
+  display: flex;
+  align-items: center;
+  font-weight: normal;
+}

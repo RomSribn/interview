@@ -1,24 +1,40 @@
 import React from 'react';
-import { useRouter } from 'next/router';
-import { ICharacter, ILocation, IEpisode } from 'interfaces/index';
-
+import { ICharacter, ILocation, IEpisode, TType } from 'interfaces/index';
+import CharacterInfo from './CharacterInfo';
+import EpisodeInfo from './EpisodeInfo';
+import LocationInfo from './LocationInfo';
 import Image from 'next/image';
 import styles from 'styles/Card.module.css';
 
-const Card: React.FC<ICharacter | IEpisode | ILocation> = ({ name, image }) => (
-  <div className={styles.card}>
-    {image && (
-      <Image
-        loader={() => image}
-        src={image}
-        alt="Picture of the banner"
-        className={styles.image}
-        width={250}
-        height={50}
-      />
-    )}
-    <p>{name}</p>
-  </div>
-);
+interface ICard {
+  searchedType: TType;
+}
+
+const Card: React.FC<ICard & ILocation & IEpisode & ICharacter> = (props) => {
+  const { image, searchedType } = props;
+  const Info = {
+    character: CharacterInfo,
+    episode: EpisodeInfo,
+    location: LocationInfo
+  }[searchedType];
+
+  return (
+    <div className={styles.card}>
+      {image && (
+        <div className={styles.imageWrap}>
+          <Image
+            loader={() => image}
+            src={image}
+            alt="Picture of the banner"
+            className={styles.image}
+            width={250}
+            height={50}
+          />
+        </div>
+      )}
+      <Info {...props} />
+    </div>
+  );
+};
 
 export default Card;

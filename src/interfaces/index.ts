@@ -14,7 +14,6 @@ interface ICharacter {
   name: string;
   status: string;
   species: string;
-  type: string;
   gender: string;
   origin: {
     name: string;
@@ -34,7 +33,7 @@ interface ILocation {
   id: number;
   name: string;
   type: string;
-  dimension: unknown;
+  dimension: string;
   residents: string[];
   url: string;
   image?: string;

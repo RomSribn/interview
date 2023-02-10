@@ -1,4 +1,5 @@
 .card {
+  position: relative;
   display: flex;
   height: 100%;
   background-color: #fff;
@@ -13,5 +14,25 @@
 }
 
 .image {
-  height: auto;
+  height: 100%;
+}
+
+.imageWrap {
+  position: relative;
+}
+
+.imageWrap::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-image: linear-gradient(
+    to left,
+    #fff,
+    rgb(255 255 255 / 75%),
+    rgb(255 255 255 / 25%),
+    rgb(255 255 255 / 0%)
+  );
 }

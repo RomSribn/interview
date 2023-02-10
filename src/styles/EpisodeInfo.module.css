@@ -1,0 +1,28 @@
+.episodeInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+
+.infoSection {
+  display: flex;
+  margin: 5px 0;
+}
+
+.title {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.infoSection:first-child .title {
+  font-size: 20pt;
+}
+
+.subtitle {
+  display: flex;
+  align-items: center;
+  font-weight: normal;
+}
