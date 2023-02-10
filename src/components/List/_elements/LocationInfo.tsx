@@ -1,8 +1,7 @@
-import { ILocation } from 'interfaces/index';
 import React from 'react';
 import styles from 'styles/LocationInfo.module.css';
 
-const LocationInfo: React.FC<ILocation> = ({ name, type, dimension }) => (
+const LocationInfo: React.FC<any> = ({ name, type, dimension }) => (
   <div className={styles.locationInfo}>
     <div className={styles.infoSection}>
       <span className={styles.title}>{name}</span>

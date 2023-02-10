@@ -5,7 +5,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { TType } from 'interfaces/index';
 import { AppState } from 'store/store';
 import { getCharacter, getLocation, getEpisode } from 'store/slices';
-
+import CharacterInfo from 'components/List/_elements/CharacterInfo';
+import EpisodeInfo from 'components/List/_elements/EpisodeInfo';
+import LocationInfo from 'components/List/_elements/LocationInfo';
 import styles from 'styles/SingleCard.module.css';
 
 interface ISingleCard {
@@ -17,7 +19,13 @@ const SingleCard: React.FC<ISingleCard> = ({ type }) => {
   const dispatch = useDispatch<any>();
   const router = useRouter();
   const { id } = router.query;
-  const { image, name } = currentElement || {};
+  const { image } = currentElement || {};
+
+  const Info = {
+    character: CharacterInfo,
+    episode: EpisodeInfo,
+    location: LocationInfo
+  }[type];
 
   const getElement = useCallback(() => {
     if (!id) return;
@@ -40,21 +48,28 @@ const SingleCard: React.FC<ISingleCard> = ({ type }) => {
   useEffect(() => {
     getElement();
   }, [getElement]);
+  console.log(currentElement);
 
   return (
     <div className={styles.singleCard}>
       <div className={styles.card}>
         {!!image && (
-          <Image
-            loader={() => image}
-            src={image}
-            alt="Picture of the banner"
-            className={styles.image}
-            width={250}
-            height={50}
-          />
+          <div className={styles.imageWrap}>
+            <Image
+              loader={() => image}
+              src={image}
+              alt="Picture of the banner"
+              className={styles.image}
+              width={250}
+              height={50}
+            />
+          </div>
         )}
-        <p>{name}</p>
+        {currentElement && (
+          <div className={styles.info}>
+            <Info {...currentElement} />
+          </div>
+        )}
       </div>
     </div>
   );

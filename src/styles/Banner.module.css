@@ -1,24 +1,26 @@
-.banner {
+.banner,
+.bannerHome {
   position: relative;
+  width: 100%;
+  background-size: cover;
+  background-position: bottom;
 }
 
-.bannerImgWrapper {
-  position: relative;
-}
-
-.bannerImgWrapper::before {
+.banner::before,
+.bannerHome::before {
   content: '';
   position: absolute;
   width: 100%;
-  height: calc(100% - 4px);
-  background-image: linear-gradient(to right, black, rgb(0 0 0 / 14%));
+  height: 100%;
   z-index: 1;
 }
 
-.bannerImg {
-  position: relative;
-  width: 100%;
-  height: auto;
+.banner::before {
+  background-image: linear-gradient(to right, #000000cc, #000000cc);
+}
+
+.bannerHome::before {
+  background-image: linear-gradient(to right, black, rgb(0 0 0 / 14%));
 }
 
 .subInfo {

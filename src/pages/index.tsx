@@ -20,7 +20,7 @@ const Home = () => {
     dispatch(getSearchItems({ type: selectedType, page, name: selectedName }));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
-  debugger;
+
   return (
     <div>
       <Search

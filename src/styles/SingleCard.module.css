@@ -1,16 +1,51 @@
 .singleCard {
-  padding: 20px;
+  position: relative;
+  padding: 60px;
+  background-color: #333333;
 }
 
 .card {
+  position: relative;
   display: flex;
+  height: 100%;
   background-color: #fff;
   border-radius: 10px;
   overflow: hidden;
-  cursor: pointer;
   transition: box-shadow 0.3s ease;
 }
 
 .image {
-  height: auto;
+  width: 100%;
+  height: 100%;
+}
+
+.imageWrap {
+  position: relative;
+  width: 40%;
+}
+
+.imageWrap::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-image: linear-gradient(
+    to left,
+    #fff,
+    rgb(255 255 255 / 75%),
+    rgb(255 255 255 / 25%),
+    rgb(255 255 255 / 0%)
+  );
+}
+
+.info {
+  position: relative;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.info > div {
+  width: 100%;
 }

@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { AppState } from '../store';
 import { HYDRATE } from 'next-redux-wrapper';
-import { IEpisode, TInfo } from 'interfaces/index';
+import { ILocation, TInfo } from 'interfaces/index';
 import httpClient from 'services/http';
 
 type TGetLocationsParams = {
@@ -24,8 +24,8 @@ export const getLocation = createAsyncThunk('location/getLocation', async (id: n
 
 // Type for our state
 export interface appState {
-  data: IEpisode[];
-  currentElement: IEpisode | null;
+  data: ILocation[];
+  currentElement: ILocation | null;
   info: TInfo | null;
   page: number;
   status: string | null;
