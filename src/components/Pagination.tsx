@@ -24,9 +24,8 @@ const PaginatedItems: React.FC<IPaginatedItems> = ({ type, count }) => {
   const handlePageClick = (event: { selected: number }) => {
     const page = event.selected + 1;
 
-    if (name) {
-      dispatch(getSearchItems({ name, type, page: event.selected }));
-    }
+    dispatch(getSearchItems({ name, type, page }));
+
     if (type === 'character') {
       dispatch(getCharacters({ page }));
       dispatch(setCharactersPage(page));

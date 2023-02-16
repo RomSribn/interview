@@ -14,11 +14,11 @@ const CharacterInfo: React.FC<any> = ({ name, status, species, location, origin 
     </div>
     <div className={styles.infoSection}>
       <span className={styles.title}>Last known location:</span>
-      <span className={styles.subtitle}>{location.name}</span>
+      <span className={styles.subtitle}>{location?.name}</span>
     </div>
     <div className={styles.infoSection}>
       <span className={styles.title}>First seen in:</span>
-      <span className={styles.subtitle}>{origin.name}</span>
+      <span className={styles.subtitle}>{origin?.name}</span>
     </div>
   </div>
 );
